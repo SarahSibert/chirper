@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Chirp;
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
-use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class ChirpController extends Controller
 {
@@ -56,7 +55,7 @@ class ChirpController extends Controller
     public function edit(Chirp $chirp): View
     {
         $this->authorize('update', $chirp);
- 
+
         return view('chirps.edit', [
             'chirp' => $chirp,
         ]);
